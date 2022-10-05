@@ -2,7 +2,6 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
-let sassMiddleware = require('node-sass-middleware');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -21,14 +20,7 @@ app.use(urlencodedParser);
 app.use(jsonParser);
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(
-    sassMiddleware({
-        src: path.join(__dirname, 'public'),
-        dest: path.join(__dirname, 'public'),
-        indentedSyntax: true, // true = .sass and false = .scss
-        sourceMap: true
-    })
-);
+
 app.use(static(path.join(__dirname, 'public')));
 
 app.use('*', indexRouter);

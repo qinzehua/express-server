@@ -10,5 +10,8 @@
     "liveServer.settings.port": 5501,
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "[dockercompose]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     }
 }
